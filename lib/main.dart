@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
+}
+
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Places',
+      home: MyFirstWidget(),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -110,6 +122,27 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class MyFirstWidget extends StatelessWidget {
+  MyFirstWidget({Key? key}) : super(key: key);
+
+  int counter = 0;
+
+  void incrementCounter() {
+    counter += 1;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    incrementCounter();
+    print('Counter: $counter');
+    return Container(
+      child: Center(
+        child: Text('Hello!'),
+      ),
     );
   }
 }
