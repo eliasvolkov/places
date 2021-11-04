@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Places',
-      home: MyFirstWidget(),
+      home: MySecondWidget(),
     );
   }
 }
@@ -126,15 +126,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class MyFirstWidget extends StatelessWidget {
-  MyFirstWidget({Key? key}) : super(key: key);
+class MySecondWidget extends StatefulWidget {
+  const MySecondWidget({Key? key}) : super(key: key);
 
-  int counter = 0;
+  @override
+  _MySecondWidgetState createState() => _MySecondWidgetState();
+}
 
-  void incrementCounter() {
-    counter += 1;
-  }
-
+class _MySecondWidgetState extends State<MySecondWidget> {
   someMethod() {
     return context.runtimeType;
   }
@@ -143,13 +142,6 @@ class MyFirstWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     print(someMethod());
 
-    incrementCounter();
-    print('Counter: $counter');
-
-    return Container(
-      child: Center(
-        child: Text('Hello!'),
-      ),
-    );
+    return Container();
   }
 }
