@@ -135,10 +135,17 @@ class MyFirstWidget extends StatelessWidget {
     counter += 1;
   }
 
+  someMethod() {
+    return context.runtimeType;
+  }
+
   @override
   Widget build(BuildContext context) {
+    print(someMethod());
+
     incrementCounter();
     print('Counter: $counter');
+
     return Container(
       child: Center(
         child: Text('Hello!'),
