@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
+}
+
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Places',
+      home: MySecondWidget(),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +36,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MySecondWidget(),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -114,27 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class MyFirstWidget extends StatelessWidget {
-  MyFirstWidget({Key? key}) : super(key: key);
-
-  int counter = 0;
-
-  void incrementCounter() {
-    counter += 1;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    incrementCounter();
-    print('Counter: $counter');
-    return Container(
-      child: Center(
-        child: Text('Hello!'),
-      ),
-    );
-  }
-}
-
 class MySecondWidget extends StatefulWidget {
   const MySecondWidget({Key? key}) : super(key: key);
 
@@ -143,22 +134,14 @@ class MySecondWidget extends StatefulWidget {
 }
 
 class _MySecondWidgetState extends State<MySecondWidget> {
-  int counter = 0;
-
-  void incrementCounter() {
-    setState(() {
-      counter += 1;
-    });
+  someMethod() {
+    return context.runtimeType;
   }
 
   @override
   Widget build(BuildContext context) {
-    incrementCounter();
-    print('Counter: $counter');
-    return Container(
-      child: Center(
-        child: Text('Hello!'),
-      ),
-    );
+    print(someMethod());
+
+    return Container();
   }
 }
