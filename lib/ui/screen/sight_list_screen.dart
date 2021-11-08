@@ -10,6 +10,9 @@ class SightListScreen extends StatefulWidget {
 class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Center(child: TextField()),
+    );
   }
 }
