@@ -17,12 +17,37 @@ class _SightListScreenState extends State<SightListScreen> {
         elevation: 0.0,
         toolbarHeight: 112.0,
         backgroundColor: Colors.white,
-        title: const Text(
-          'Список\nинтересных мест',
-          style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.w700,
-              color: Color(0xFF252849)),
+        title: RichText(
+          text: const TextSpan(children: [
+            TextSpan(
+                text: 'С',
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xFF4CAF50),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700)),
+            TextSpan(
+                text: 'писок',
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xFF252849),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700)),
+            TextSpan(
+                text: '\nи',
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xFFFCDD3D),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700)),
+            TextSpan(
+                text: 'нтересных мест',
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xFF252849),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700)),
+          ]),
         ),
       ),
       resizeToAvoidBottomInset: false,
