@@ -15,25 +15,28 @@ class _SightListScreenState extends State<SightListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: false,
-        elevation: 0.0,
-        toolbarHeight: 112.0,
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Список\nинтересных мест',
-          style: TextStyle(
-              fontFamily: 'Roboto',
-              fontSize: 32,
-              fontWeight: FontWeight.w700,
-              color: Color(0xFF252849)),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(112.0),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Text(
+              'Список\nинтересных мест',
+              style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFF252849)),
+            ),
+          ),
         ),
       ),
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           SightCard(sight: mocks[0]),
-          SizedBox(
+          const SizedBox(
             height: 16.0,
           ),
           SightCard(sight: mocks[1])
