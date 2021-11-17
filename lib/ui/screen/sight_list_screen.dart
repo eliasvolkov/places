@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:places/constants/colors.dart';
+import 'package:places/constants/typography.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
 import '../../mocks.dart';
@@ -15,7 +17,7 @@ class _SightListScreenState extends State<SightListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(112.0),
         child: Padding(
           padding: EdgeInsets.all(16.0),
@@ -23,11 +25,7 @@ class _SightListScreenState extends State<SightListScreen> {
             alignment: Alignment.bottomLeft,
             child: Text(
               'Список\nинтересных мест',
-              style: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontSize: 32,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFF252849)),
+              style: kLargeTitleStyle.copyWith(color: kSecondaryColor),
             ),
           ),
         ),

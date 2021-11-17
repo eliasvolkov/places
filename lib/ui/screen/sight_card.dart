@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:places/constants/colors.dart';
+import 'package:places/constants/typography.dart';
 import 'package:places/domain/sight.dart';
 
 class SightCard extends StatelessWidget {
@@ -13,8 +15,6 @@ class SightCard extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 3 / 2,
         child: Container(
-          // width: double.infinity,
-          // height: 188.0,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(12.0)),
               color: Color(0xFFF5F5F5)),
@@ -38,13 +38,9 @@ class SightCard extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          sight.type,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w700),
-                        ),
+                        Text(sight.type,
+                            style:
+                                kSmallBoldStyle.copyWith(color: Colors.white)),
                         SvgPicture.asset('assets/icons/heart.svg')
                       ],
                     ),
@@ -61,24 +57,16 @@ class SightCard extends StatelessWidget {
                       child: Text(
                         sight.name,
                         textAlign: TextAlign.left,
-                        style: const TextStyle(
-                            color: Color(0xFF3B3E5B),
-                            fontFamily: 'Roboto',
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500),
+                        style: kTextStyle.copyWith(color: kMainColor),
                         maxLines: 2,
                       ),
                     ),
                     const SizedBox(
                       height: 2.0,
                     ),
-                    Text(
-                      sight.type,
-                      style: const TextStyle(
-                        color: Color(0xFF7C7E92),
-                        fontFamily: 'Roboto',
-                      ),
-                    )
+                    Text(sight.type,
+                        style:
+                            kRobotoTextStyle.copyWith(color: kSecondary2Color))
                   ],
                 ),
               )

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:places/constants/colors.dart';
+import 'package:places/constants/typography.dart';
 
 class SightDetails extends StatelessWidget {
   const SightDetails({Key? key}) : super(key: key);
@@ -34,54 +36,38 @@ class SightDetails extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               children: [
-                const Align(
+                Align(
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Пряности и радости',
-                    style: TextStyle(
-                        color: Color(0xFF3B3E5B),
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24.0),
+                    style: kTitleStyle.copyWith(color: kSecondaryColor),
                   ),
                 ),
                 const SizedBox(
                   height: 2.0,
                 ),
                 Row(
-                  children: const [
+                  children: [
                     Text(
                       'ресторан',
-                      style: TextStyle(
-                        color: Color(0xFF3B3E5B),
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: kSmallBoldStyle.copyWith(color: kSecondaryColor),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 16.0,
                     ),
-                    Text(
-                      'закрыто до 09:00',
-                      style: TextStyle(
-                        color: Color(0xFF7C7E92),
-                        fontFamily: 'Roboto',
-                      ),
-                    ),
+                    Text('закрыто до 09:00',
+                        style:
+                            kRobotoTextStyle.copyWith(color: kSecondary2Color)),
                   ],
                 ),
                 const SizedBox(
                   height: 24.0,
                 ),
-                const Text(
-                  "Пряный вкус радостной жизни вместе с\nшеф-поваром. Изо Дзандзава,"
-                  "благодаря которой у гостей ресторана есть возможность выбирать из двух направлений: европейского и восточного",
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    color: Color(0xFF3B3E5B),
-                    fontFamily: 'Roboto',
-                  ),
-                ),
+                Text(
+                    "Пряный вкус радостной жизни вместе с\nшеф-поваром. Изо Дзандзава,"
+                    "благодаря которой у гостей ресторана есть возможность выбирать из двух направлений: европейского и восточного",
+                    textAlign: TextAlign.justify,
+                    style: kRobotoTextStyle.copyWith(color: kSecondaryColor)),
                 const SizedBox(
                   height: 24.0,
                 ),
