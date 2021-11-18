@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/constants/colors.dart';
+import 'package:places/constants/icons.dart';
 import 'package:places/constants/typography.dart';
 import 'package:places/domain/sight.dart';
 
@@ -39,9 +40,9 @@ class SightCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(sight.type,
-                            style:
-                                kSmallBoldStyle.copyWith(color: Colors.white)),
-                        SvgPicture.asset('assets/icons/heart.svg')
+                            style: AppTextStyles.smallBoldStyle
+                                .copyWith(color: Colors.white)),
+                        SvgPicture.asset(AppIcons.heartIcon)
                       ],
                     ),
                   )
@@ -57,7 +58,8 @@ class SightCard extends StatelessWidget {
                       child: Text(
                         sight.name,
                         textAlign: TextAlign.left,
-                        style: kTextStyle.copyWith(color: kMainColor),
+                        style: AppTextStyles.textStyle
+                            .copyWith(color: AppColors.mainColor),
                         maxLines: 2,
                       ),
                     ),
@@ -65,8 +67,8 @@ class SightCard extends StatelessWidget {
                       height: 2.0,
                     ),
                     Text(sight.type,
-                        style:
-                            kRobotoTextStyle.copyWith(color: kSecondary2Color))
+                        style: AppTextStyles.robotoTextStyle
+                            .copyWith(color: AppColors.secondary2Color))
                   ],
                 ),
               )

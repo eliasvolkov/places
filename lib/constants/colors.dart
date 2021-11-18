@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-const kMainColor = Color(0xFF252849);
-const kSecondaryColor = Color(0xFF3B3E5B);
-const kSecondary2Color = Color(0xFF7C7E92);
-const kInactiveColor = Color.fromRGBO(124, 126, 146, 0.56);
+abstract class AppColors {
+  static const mainColor = Color(0xFF252849);
+  static const secondaryColor = Color(0xFF3B3E5B);
+  static const secondary2Color = Color(0xFF7C7E92);
+  static const inactiveColor = Color.fromRGBO(124, 126, 146, 0.56);
+}

@@ -40,7 +40,8 @@ class SightDetails extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Пряности и радости',
-                    style: kTitleStyle.copyWith(color: kSecondaryColor),
+                    style: AppTextStyles.titleStyle
+                        .copyWith(color: AppColors.secondaryColor),
                   ),
                 ),
                 const SizedBox(
@@ -50,14 +51,15 @@ class SightDetails extends StatelessWidget {
                   children: [
                     Text(
                       'ресторан',
-                      style: kSmallBoldStyle.copyWith(color: kSecondaryColor),
+                      style: AppTextStyles.smallBoldStyle
+                          .copyWith(color: AppColors.secondaryColor),
                     ),
                     const SizedBox(
                       width: 16.0,
                     ),
                     Text('закрыто до 09:00',
-                        style:
-                            kRobotoTextStyle.copyWith(color: kSecondary2Color)),
+                        style: AppTextStyles.textStyle
+                            .copyWith(color: AppColors.secondary2Color)),
                   ],
                 ),
                 const SizedBox(
@@ -67,7 +69,8 @@ class SightDetails extends StatelessWidget {
                     "Пряный вкус радостной жизни вместе с\nшеф-поваром. Изо Дзандзава,"
                     "благодаря которой у гостей ресторана есть возможность выбирать из двух направлений: европейского и восточного",
                     textAlign: TextAlign.justify,
-                    style: kRobotoTextStyle.copyWith(color: kSecondaryColor)),
+                    style: AppTextStyles.robotoTextStyle
+                        .copyWith(color: AppColors.secondaryColor)),
                 const SizedBox(
                   height: 24.0,
                 ),

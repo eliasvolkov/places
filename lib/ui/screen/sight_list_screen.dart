@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/constants/colors.dart';
+import 'package:places/constants/strings.dart';
 import 'package:places/constants/typography.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
@@ -24,8 +25,9 @@ class _SightListScreenState extends State<SightListScreen> {
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Text(
-              'Список\nинтересных мест',
-              style: kLargeTitleStyle.copyWith(color: kSecondaryColor),
+              appBarTitle,
+              style: AppTextStyles.largeTitleStyle
+                  .copyWith(color: AppColors.secondaryColor),
             ),
           ),
         ),
