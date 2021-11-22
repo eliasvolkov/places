@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/constants/colors.dart';
 import 'package:places/constants/icons.dart';
@@ -27,13 +28,32 @@ class SightCard extends StatelessWidget {
                 children: [
                   Positioned(
                       child: Container(
-                          width: double.infinity,
-                          height: 96.0,
-                          decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(12.0),
-                                  topRight: Radius.circular(12.0)),
-                              color: Colors.green))),
+                    width: double.infinity,
+                    height: 96.0,
+                    child: ClipRRect(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(16.0)),
+                      child: Image.network(
+                        sight.url,
+                        fit: BoxFit.cover,
+                        color: Color.fromRGBO(0, 0, 0, 0.2),
+                        colorBlendMode: BlendMode.darken,
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) return child;
+
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: loadingProgress.expectedTotalBytes != null
+                                  ? loadingProgress.cumulativeBytesLoaded /
+                                      (loadingProgress.expectedTotalBytes
+                                          as num)
+                                  : null,
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  )),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
