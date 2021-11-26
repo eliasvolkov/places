@@ -6,6 +6,8 @@ import 'package:places/mocks.dart';
 import 'package:places/ui/screen/widgets/visited_card.dart';
 import 'package:places/ui/screen/widgets/wanted_card.dart';
 
+import 'widgets/bottom_bar.dart';
+
 class VisitingScreen extends StatelessWidget {
   const VisitingScreen({Key? key}) : super(key: key);
 
@@ -69,6 +71,7 @@ class VisitingScreen extends StatelessWidget {
             _visitedList(),
           ],
         ),
+        bottomNavigationBar: BottomBar(),
       ),
     );
   }
