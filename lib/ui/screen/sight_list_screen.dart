@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:places/constants/colors.dart';
 import 'package:places/constants/strings.dart';
 import 'package:places/constants/typography.dart';
-import 'package:places/ui/screen/sight_card.dart';
+import 'package:places/ui/screen/widgets/sight_card.dart';
 
 import '../../mocks.dart';
 
@@ -25,7 +25,7 @@ class _SightListScreenState extends State<SightListScreen> {
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Text(
-              appBarTitle,
+              SightListStrings.appBarTitle,
               style: AppTextStyles.largeTitleStyle
                   .copyWith(color: AppColors.secondaryColor),
             ),
