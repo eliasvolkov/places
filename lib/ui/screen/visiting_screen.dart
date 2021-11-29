@@ -32,38 +32,43 @@ class VisitingScreen extends StatelessWidget {
             preferredSize: const Size.fromHeight(52),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 6, 16, 6),
-              child: Stack(
-                children: [
-                  Container(
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color: AppColors.background,
-                      borderRadius: BorderRadius.circular(
-                        40.0,
+              child: Material(
+                clipBehavior: Clip.antiAlias,
+                borderRadius: BorderRadius.circular(40),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 48,
+                      decoration: BoxDecoration(
+                        color: AppColors.background,
+                        borderRadius: BorderRadius.circular(
+                          40.0,
+                        ),
                       ),
                     ),
-                  ),
-                  TabBar(
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    indicator: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        40.0,
+                    TabBar(
+                      enableFeedback: false,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicator: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          40.0,
+                        ),
+                        color: AppColors.mainColor,
                       ),
-                      color: AppColors.mainColor,
+                      labelColor: Colors.white,
+                      labelStyle: AppTextStyles.smallBoldStyle,
+                      unselectedLabelColor: AppColors.inactiveColor,
+                      tabs: const [
+                        Tab(
+                          text: VisitingListStrings.wantedTabTitle,
+                        ),
+                        Tab(
+                          text: VisitingListStrings.visitedTabTitle,
+                        ),
+                      ],
                     ),
-                    labelColor: Colors.white,
-                    labelStyle: AppTextStyles.smallBoldStyle,
-                    unselectedLabelColor: AppColors.inactiveColor,
-                    tabs: const [
-                      Tab(
-                        text: VisitingListStrings.wantedTabTitle,
-                      ),
-                      Tab(
-                        text: VisitingListStrings.visitedTabTitle,
-                      ),
-                    ],
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
