@@ -31,12 +31,12 @@ class VisitedCard extends StatelessWidget {
                     width: double.infinity,
                     height: 96.0,
                     child: ClipRRect(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(16.0)),
+                      borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(16.0)),
                       child: Image.network(
                         sight.url,
                         fit: BoxFit.cover,
-                        color: Color.fromRGBO(0, 0, 0, 0.2),
+                        color: const Color.fromRGBO(0, 0, 0, 0.2),
                         colorBlendMode: BlendMode.darken,
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) return child;
@@ -66,7 +66,7 @@ class VisitedCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SvgPicture.asset(AppIcons.shareIcon, width: 22),
-                            SizedBox(
+                            const SizedBox(
                               width: 23,
                             ),
                             SvgPicture.asset(AppIcons.cancelIcon, width: 22),
@@ -83,7 +83,7 @@ class VisitedCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ConstrainedBox(
-                      constraints: BoxConstraints.tightFor(width: 296),
+                      constraints: const BoxConstraints.tightFor(width: 296),
                       child: Text(
                         sight.name,
                         textAlign: TextAlign.left,

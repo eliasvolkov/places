@@ -29,7 +29,7 @@ class VisitingScreen extends StatelessWidget {
                 .copyWith(color: AppColors.mainColor),
           ),
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(52),
+            preferredSize: const Size.fromHeight(52),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 6, 16, 6),
               child: Stack(
@@ -112,7 +112,7 @@ class VisitingScreen extends StatelessWidget {
 
   Padding _visitedList() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 32),
+      padding: const EdgeInsets.symmetric(vertical: 32),
       child: Column(
         children: [
           VisitedCard(

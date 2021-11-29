@@ -19,7 +19,7 @@ class SightDetails extends StatelessWidget {
                   'https://www.okrae.odbvrn.ru/sites/okrae.odbvrn.ru/files/usersfiles/orig_-_kopiya_1200_500_5_100_1.jpg',
                   fit: BoxFit.fitHeight,
                   height: 360,
-                  color: Color.fromRGBO(0, 0, 0, 0.2),
+                  color: const Color.fromRGBO(0, 0, 0, 0.2),
                   colorBlendMode: BlendMode.darken,
                   loadingBuilder: (context, child, loadingProgress) {
                     if (loadingProgress == null) return child;

@@ -19,9 +19,9 @@ class _SightListScreenState extends State<SightListScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(112.0),
+        preferredSize: const Size.fromHeight(112.0),
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Text(
