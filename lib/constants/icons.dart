@@ -3,6 +3,7 @@ abstract class AppIcons {
   static const cancelIcon = 'assets/icons/cancel.svg';
   static const calendarIcon = 'assets/icons/сalendar.svg';
   static const shareIcon = 'assets/icons/share.svg';
+  static const cardIcon = 'assets/icons/card.svg';
 
   static const list = 'assets/icons/list.svg';
   static const map = 'assets/icons/map.svg';

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/constants/colors.dart';
+import 'package:places/constants/icons.dart';
 import 'package:places/constants/strings.dart';
 import 'package:places/constants/typography.dart';
 import 'package:places/mocks.dart';
@@ -13,6 +15,7 @@ class VisitingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -51,7 +54,7 @@ class VisitingScreen extends StatelessWidget {
                     labelColor: Colors.white,
                     labelStyle: AppTextStyles.smallBoldStyle,
                     unselectedLabelColor: AppColors.inactiveColor,
-                    tabs: [
+                    tabs: const [
                       Tab(
                         text: VisitingListStrings.wantedTabTitle,
                       ),
@@ -67,12 +70,43 @@ class VisitingScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            _wantList(),
+            // _wantList(),
+            _emptyList(size),
             _visitedList(),
           ],
         ),
-        bottomNavigationBar: BottomBar(),
+        bottomNavigationBar: const BottomBar(),
       ),
+    );
+  }
+
+  Column _emptyList(Size size) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SvgPicture.asset(AppIcons.cardIcon),
+        const SizedBox(
+          height: 24.0,
+        ),
+        Text(
+          VisitingListStrings.emptyTabViewTitle,
+          style: AppTextStyles.subtitleStyle
+              .copyWith(color: AppColors.inactiveColor),
+        ),
+        const SizedBox(
+          height: 8.0,
+        ),
+        ConstrainedBox(
+          constraints: BoxConstraints.tightFor(width: size.width * 0.6),
+          child: Text(
+            VisitingListStrings.emptyTabViewSubtitle,
+            textAlign: TextAlign.center,
+            style: AppTextStyles.robotoTextStyle
+                .copyWith(color: AppColors.inactiveColor),
+          ),
+        ),
+      ],
     );
   }
 
