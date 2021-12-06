@@ -6,9 +6,9 @@ import 'package:places/constants/icons.dart';
 import 'package:places/constants/typography.dart';
 import 'package:places/domain/sight.dart';
 
-class SightCard extends StatelessWidget {
+class VisitedCard extends StatelessWidget {
   final Sight sight;
-  const SightCard({Key? key, required this.sight}) : super(key: key);
+  const VisitedCard({Key? key, required this.sight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +31,12 @@ class SightCard extends StatelessWidget {
                     width: double.infinity,
                     height: 96.0,
                     child: ClipRRect(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(16.0)),
+                      borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(16.0)),
                       child: Image.network(
                         sight.url,
                         fit: BoxFit.cover,
-                        color: Color.fromRGBO(0, 0, 0, 0.2),
+                        color: const Color.fromRGBO(0, 0, 0, 0.2),
                         colorBlendMode: BlendMode.darken,
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) return child;
@@ -62,7 +62,16 @@ class SightCard extends StatelessWidget {
                         Text(sight.type,
                             style: AppTextStyles.smallBoldStyle
                                 .copyWith(color: Colors.white)),
-                        SvgPicture.asset(AppIcons.heartIcon)
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(AppIcons.shareIcon, width: 22),
+                            const SizedBox(
+                              width: 23,
+                            ),
+                            SvgPicture.asset(AppIcons.cancelIcon, width: 22),
+                          ],
+                        )
                       ],
                     ),
                   )
@@ -74,7 +83,7 @@ class SightCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ConstrainedBox(
-                      constraints: BoxConstraints.tightFor(width: 296),
+                      constraints: const BoxConstraints.tightFor(width: 296),
                       child: Text(
                         sight.name,
                         textAlign: TextAlign.left,

@@ -5,4 +5,6 @@ abstract class AppColors {
   static const secondaryColor = Color(0xFF3B3E5B);
   static const secondary2Color = Color(0xFF7C7E92);
   static const inactiveColor = Color.fromRGBO(124, 126, 146, 0.56);
+  static const background = Color(0xFFF5F5F5);
+  static const green = Color(0xFF4CAF50);
 }
